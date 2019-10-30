@@ -5,7 +5,7 @@ from utils.data.CsvTable import CsvTable
 from utils.io.CsvReaderWriter import CsvReaderWriter
 
 
-class MyTestCase(unittest.TestCase):
+class test_CsvReader(unittest.TestCase):
     def test_CsvReader_read(self):
         # test non existing csv file
         with mock.patch('utils.io.CsvReaderWriter.CsvReaderWriter'):
