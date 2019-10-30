@@ -10,7 +10,7 @@ codecov:
 coverage:
   range: 75...100
   ignore:
-  - tests/*
+  - tests/.*
   - run_all_tests.py
   status:
     patch: false
