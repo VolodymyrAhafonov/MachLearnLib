@@ -1,0 +1,19 @@
+# See default configuration here: https://github.com/codecov/support/blob/master/codecov.yml
+#
+# For more options see: https://gist.github.com/stevepeak/53bee7b2c326b24a9b4a
+#
+# Codecov documentation is available here: https://docs.codecov.io/
+
+codecov:
+  token: e8ffdfc9-2b5e-4d65-b11a-41445eec52f7
+
+coverage:
+  range: 75...100
+  ignore:
+  - tests/*
+  - run_all_tests.py
+  status:
+    patch: false
+
+comment:
+  layout: "diff"
