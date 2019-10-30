@@ -15,13 +15,14 @@ class CsvReaderWriter:
 
         with open(path_to_csv_file) as csv_table:
             reader = csv.reader(csv_table)
-            if with_header:
-                header = next(reader)
-            else:
-                header = None
-            data = []
-            for row in reader:
-                data.append(row)
+
+        if with_header:
+            header = next(reader)
+        else:
+            header = None
+        data = []
+        for row in reader:
+            data.append(row)
 
         return CsvTable(header=header, data_rows=data)
 
