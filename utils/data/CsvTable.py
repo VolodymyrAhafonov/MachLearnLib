@@ -7,20 +7,20 @@ class CsvTable:
     """
     Class that handle csv table data.
     """
-    def __init__(self, header: list or None, data_rows: list):
+    def __init__(self, header: list or None, data: list):
         self.__header = header
-        self.__data = data_rows
+        self.__data = data
 
     def to_numpy(self, dtype: np.dtype) -> np.ndarray:
         return np.array(self.data, dtype=dtype)
 
     def fill_holes(self, data_cleaner: BaseDataCleaner):  # return CsvTable
         data = data_cleaner.clean_data(self.__data.copy())
-        return CsvTable(header=self.header, data_rows=data)
+        return CsvTable(header=self.header, data=data)
 
     def convert_nonnumeric_attributes_to_numeric(self):  # return Tuple[CsvTable, Dict[int, str]]
         data, attribute_map = BaseDataCleaner.convert_nonnumeric_attributes_to_numeric(self.__data.copy())
-        return CsvTable(header=self.__header, data_rows=data), attribute_map
+        return CsvTable(header=self.__header, data=data), attribute_map
 
     @property
     def header(self):

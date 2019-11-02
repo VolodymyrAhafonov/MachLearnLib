@@ -24,7 +24,7 @@ class CsvReaderWriter:
         for row in reader:
             data.append(row)
 
-        return CsvTable(header=header, data_rows=data)
+        return CsvTable(header=header, data=data)
 
     @staticmethod
     def write(path_to_csv_file: str, csv_table: CsvTable) -> None:
