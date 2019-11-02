@@ -35,7 +35,7 @@ class test_CsvReader(unittest.TestCase):
                     self.assertEqual([['col1', 'col2', 'col3'], ['1', '2', '3']], csv_table.data)
 
     def test_CsvReaderWriter_write(self):
-        csv_table = CsvTable(header=['col1', 'col2', 'col3'], data_rows=[['1', '2', '3'], ['4', '5', '6']])
+        csv_table = CsvTable(header=['col1', 'col2', 'col3'], data=[['1', '2', '3'], ['4', '5', '6']])
         filepath = 'fake_path.csv'
         with mock.patch('builtins.open', mock.mock_open()) as mocked_file:
             CsvReaderWriter.write(filepath, csv_table)
