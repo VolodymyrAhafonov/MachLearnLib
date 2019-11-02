@@ -11,8 +11,8 @@ class CsvTable:
         self.__header = header
         self.__data = data
 
-    def to_numpy(self, dtype: np.dtype) -> np.ndarray:
-        return np.array(self.data, dtype=dtype)
+    def to_numpy(self, dtype: np.generic) -> np.ndarray:
+        return np.array(self.data, dtype=np.float32).astype(dtype)
 
     def fill_holes(self, data_cleaner: BaseDataCleaner):  # return CsvTable
         data = data_cleaner.clean_data(self.__data.copy())
