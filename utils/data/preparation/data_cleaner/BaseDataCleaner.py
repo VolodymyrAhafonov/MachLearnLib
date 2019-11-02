@@ -57,6 +57,7 @@ class BaseDataCleaner(ABC):
                         # symbolic attribute is not in attribute map, encode it to numeric and put in map
                         attribute_map[elem] = current_attribute_value
                         current_attribute_value += 1
+                        data[i][j] = str(attribute_map[elem])
 
         result_dict = {}
         # invert attribute map
