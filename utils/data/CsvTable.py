@@ -29,3 +29,8 @@ class CsvTable:
     @property
     def data(self):
         return self.__data
+
+    def __eq__(self, other):
+        if self.__class__ != other.__class__:
+            return False
+        return self.__dict__ == other.__dict__
